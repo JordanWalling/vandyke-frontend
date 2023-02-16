@@ -5,6 +5,9 @@ const app = express();
 
 port = process.env.PORT;
 
-app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${port} `);
+// Database Connection and Port
+mongoose.connect(process.env.MONGO_URI).then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`MongoDb is connected, Listening on port ${port} `);
+  });
 });
