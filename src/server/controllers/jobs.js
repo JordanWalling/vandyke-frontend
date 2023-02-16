@@ -1,16 +1,38 @@
 const Job = require("../models/jobs");
 
 const getJobs = async (req, res) => {
-  res.json({ message: "GET ALL of the JOBS" });
+  try {
+    const allJobs = await Job.find({}).sort("createdAt");
+    res.status(200).json(allJobs);
+  } catch (err) {
+    console.log(err);
+  }
 };
-const getJob = async (req, res) => {
-  res.json({ message: "GET a JOB" });
-};
-const createJob = async (req, res) => {
-  const { number, company } = req.body;
 
-  const jobExists = Job.find({ number });
-  if (jobExists) {
+// GET A JOB
+const getJob = async (req, res) => {
+  const {
+    params: { id: jobId },
+  } = req;
+  try {
+    const job = await Job.findOne({
+      _id: jobId,
+    });
+    if (!job) {
+      return res.json({ error: "Job not found" });
+    }
+    res.json(job);
+  } catch (err) {
+    console.log(err);
+  }
+};
+// CREATE A JOB
+const createJob = async (req, res) => {
+  const { number, company, status } = req.body;
+
+  const job = await Job.findOne({ number });
+
+  if (job) {
     return res.json({ error: "Job already exists" });
   }
   if (!number) {
@@ -21,12 +43,12 @@ const createJob = async (req, res) => {
   }
   try {
     const job = await Job.create({
-      number: req.body.number,
-      company: req.body.company,
-      status: req.body.status,
+      number,
+      company,
+      status,
     });
     job.save();
-    res.status(200).json(job);
+    res.status(200).json({ job });
   } catch (err) {
     console.log(err);
   }
