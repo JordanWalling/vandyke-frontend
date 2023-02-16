@@ -19,6 +19,6 @@ router.post("/job", createJob);
 router.delete("/job/:id", deleteJob);
 
 // UPDATE JOB
-router.put("/job/:id", updateJob);
+router.patch("/job/:id", updateJob);
 
 module.exports = router;

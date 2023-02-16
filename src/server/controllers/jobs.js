@@ -53,8 +53,35 @@ const createJob = async (req, res) => {
     console.log(err);
   }
 };
+
+// UPDATE A JOB
 const updateJob = async (req, res) => {
-  res.json({ message: "UPDATE existing JOB" });
+  const {
+    body: { company, number, status },
+    params: { id: jobId },
+  } = req;
+
+  try {
+    if (company === "" || number === "" || jobId === "") {
+      res.json({ error: "Please fill in all fields" });
+    }
+
+    const job = await Job.findOneAndUpdate(
+      {
+        _id: jobId,
+      },
+      req.body,
+      { new: true }
+    );
+
+    if (!job) {
+      return res.json({ error: "Job not found" });
+    }
+
+    res.json(job);
+  } catch (err) {
+    console.log(err);
+  }
 };
 const deleteJob = async (req, res) => {
   res.json({ message: "DELETE a JOB" });
