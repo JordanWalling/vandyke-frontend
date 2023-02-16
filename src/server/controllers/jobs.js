@@ -1,5 +1,6 @@
 const Job = require("../models/jobs");
 
+// GET ALL THE JOBS
 const getJobs = async (req, res) => {
   try {
     const allJobs = await Job.find({}).sort("createdAt");
@@ -9,7 +10,7 @@ const getJobs = async (req, res) => {
   }
 };
 
-// GET A JOB
+// GET A SINGLE JOB
 const getJob = async (req, res) => {
   const {
     params: { id: jobId },
@@ -26,6 +27,7 @@ const getJob = async (req, res) => {
     console.log(err);
   }
 };
+
 // CREATE A JOB
 const createJob = async (req, res) => {
   const { number, company, status } = req.body;
@@ -83,8 +85,22 @@ const updateJob = async (req, res) => {
     console.log(err);
   }
 };
+
+// DELETE A JOB
 const deleteJob = async (req, res) => {
-  res.json({ message: "DELETE a JOB" });
+  const { id: jobId } = req.params;
+
+  try {
+    const job = await Job.findByIdAndDelete({
+      _id: jobId,
+    });
+    if (!job) {
+      return res.json({ error: "Job not found" });
+    }
+    res.status(200).json(job);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
