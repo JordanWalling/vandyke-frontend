@@ -20,3 +20,5 @@ router.delete("/job/:id", deleteJob);
 
 // UPDATE JOB
 router.put("/job/:id", updateJob);
+
+module.exports = router;

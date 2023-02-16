@@ -15,6 +15,9 @@ const jobSchema = new mongoose.Schema(
       enum: ["created", "progress", "completed", "sent"],
       default: "created",
     },
+    notes: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
