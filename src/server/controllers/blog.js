@@ -11,7 +11,7 @@ cloudinary.config({
 
 const createBlog = async (req, res) => {
   // console.log(req.body);
-  const { content, title } = req.body;
+  const { content, title, image } = req.body;
   if (!content || !title) {
     res.json({ error: "Please fill in all fields" });
   }
@@ -19,6 +19,7 @@ const createBlog = async (req, res) => {
     const blog = await Blog.create({
       content: req.body.content,
       title: req.body.title,
+      image,
     });
     blog.save();
     res.status(200).json(blog);
