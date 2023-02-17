@@ -32,10 +32,9 @@ const createUser = async (req, res) => {
       { userId: user._id, name: user.name },
       process.env.JWT_SECRET,
       {
-        expiresIn: "1d",
+        expiresIn: "10d",
       }
     );
-
     user.save();
     res
       .status(200)
@@ -47,7 +46,34 @@ const createUser = async (req, res) => {
 
 // LOGIN USER
 const loginUser = async (req, res) => {
-  res.json({ message: "LOGIN USER" });
+  try {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.json({ error: "Please provide email and password" });
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.json({ error: "No user found" });
+    }
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      return res.json({ error: "Incorrect password" });
+    }
+
+    const token = await jwt.sign(
+      { userId: user._id, firstName: user.firstName },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "10d",
+      }
+    );
+
+    res.status(200).json({ user: { firstName: user.firstName }, token });
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 module.exports = {
