@@ -1,32 +1,41 @@
-const CreateBlog = ({ content, setContent, handleSubmit }) => {
+const CreateBlog = ({
+  content,
+  setContent,
+  handleSubmit,
+  title,
+  setTitle,
+  image,
+  setImage,
+  handleImage,
+}) => {
   return (
     <div>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h2>Create a new blog</h2>
         <div>
-          <label htmlFor="name">Title:</label>
+          <label>Title:</label>
           <input
             type="text"
-            //value="Title"
+            value={title}
             placeholder="Enter a Title"
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div>
-          <label>Image:</label>
-          <input
-            type="file"
-            //value="image"
-          />
+          <label>
+            <input type="file" accept="images/*" onChange={handleImage} />
+          </label>
         </div>
         <div>
           <label>Content:</label>
-          <input
+          <textarea
             type="text"
-            //value="content"
+            value={content}
             placeholder="Add Content here"
+            onChange={(e) => setContent(e.target.value)}
           />
         </div>
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       </form>
     </div>
   );

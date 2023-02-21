@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const jobRoutes = require("./routes/job");
 const blogRoutes = require("./routes/blog");
 const userRoutes = require("./routes/user");
@@ -8,8 +9,14 @@ require("dotenv").config();
 
 const app = express();
 
+// const corsOptions = {
+//   origin: process.env.REACT_DEV_PORT,
+//   optionsSuccessStatus: 200,
+// };
+
 // middleware
 app.use(express.json());
+app.use(cors());
 
 // route middleware
 app.use("/api", jobRoutes);
