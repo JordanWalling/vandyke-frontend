@@ -9,6 +9,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
+// CREATE A BLOG
 const createBlog = async (req, res) => {
   // console.log(req.body);
   const { content, title, image } = req.body;
@@ -28,6 +29,7 @@ const createBlog = async (req, res) => {
   }
 };
 
+// UPLOAD IMAGE TO CLOUDINARY
 const uploadBlogImage = async (req, res) => {
   try {
     const uploadImage = await cloudinary.uploader.upload(req.files.image.path);
@@ -41,7 +43,18 @@ const uploadBlogImage = async (req, res) => {
   }
 };
 
+// GET ALL BLOGS
+const getBlogs = async (req, res) => {
+  try {
+    const getAllBlogs = await Blog.find({}).sort("createdAt");
+    res.status(200).json(getAllBlogs);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 module.exports = {
   createBlog,
   uploadBlogImage,
+  getBlogs,
 };

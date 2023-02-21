@@ -4,7 +4,11 @@ const formidable = require("express-formidable");
 const router = express.Router();
 
 // controllers
-const { createBlog, uploadBlogImage } = require("../controllers/blog");
+const {
+  createBlog,
+  uploadBlogImage,
+  getBlogs,
+} = require("../controllers/blog");
 
 router.post("/create-blog", createBlog);
 router.post(
@@ -12,5 +16,7 @@ router.post(
   formidable({ maxFileSize: 3 * 1024 * 1024 }),
   uploadBlogImage
 );
+
+router.get("/all-blogs", getBlogs);
 
 module.exports = router;
