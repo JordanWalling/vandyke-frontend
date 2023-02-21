@@ -17,7 +17,6 @@ const Dashboard = () => {
 
     try {
       const { data } = await axios.post(
-        // below doesnt work unless the domain is put in, left out for now
         `${BASE_URL}/upload-blog-image`,
         formData
       );
@@ -35,15 +34,11 @@ const Dashboard = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post(
-        // below doesnt work unless the domain is put in, left out for now
-        `${BASE_URL}/create-blog`,
-        {
-          content,
-          title,
-          image,
-        }
-      );
+      const { data } = await axios.post(`${BASE_URL}/create-blog`, {
+        content,
+        title,
+        image,
+      });
       console.log(data);
     } catch (err) {
       console.log(err);
