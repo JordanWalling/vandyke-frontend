@@ -3,7 +3,6 @@ import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-// not working yet
 const GetBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const fetchBlogs = async () => {

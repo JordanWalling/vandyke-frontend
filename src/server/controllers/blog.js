@@ -53,8 +53,18 @@ const getBlogs = async (req, res) => {
   }
 };
 
+// GET SINGLE BLOG
+const getSingleBlog = async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params._id);
+    res.json(blog);
+  } catch (err) {
+    console.log(err);
+  }
+};
 module.exports = {
   createBlog,
   uploadBlogImage,
   getBlogs,
+  getSingleBlog,
 };

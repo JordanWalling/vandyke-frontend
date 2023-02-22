@@ -8,6 +8,7 @@ const {
   createBlog,
   uploadBlogImage,
   getBlogs,
+  getSingleBlog,
 } = require("../controllers/blog");
 
 router.post("/create-blog", createBlog);
@@ -18,5 +19,6 @@ router.post(
 );
 
 router.get("/all-blogs", getBlogs);
+router.get("/blog/:_id", getSingleBlog);
 
 module.exports = router;
