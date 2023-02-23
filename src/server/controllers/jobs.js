@@ -32,12 +32,12 @@ const getJob = async (req, res) => {
 const createJob = async (req, res) => {
   const { number, company, status } = req.body;
 
-  const job = await Job.findOne({ jobNumber });
+  const job = await Job.findOne({ number });
 
   if (job) {
     return res.json({ error: "Job already exists" });
   }
-  if (!jobNumber) {
+  if (!number) {
     return res.json({ error: "Please provide a number" });
   }
   if (!company) {
@@ -45,7 +45,7 @@ const createJob = async (req, res) => {
   }
   try {
     const job = await Job.create({
-      jobNumber,
+      number,
       company,
       status,
     });
@@ -59,12 +59,12 @@ const createJob = async (req, res) => {
 // UPDATE A JOB
 const updateJob = async (req, res) => {
   const {
-    body: { company, jobNumber, status },
+    body: { company, number, status },
     params: { id: jobId },
   } = req;
 
   try {
-    if (company === "" || jobNumber === "" || jobId === "") {
+    if (company === "" || number === "" || jobId === "") {
       res.json({ error: "Please fill in all fields" });
     }
 

@@ -11,7 +11,7 @@ import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
-import SingleJob from "./pages/SingleJob";
+import JobDetail from "./pages/JobDetail";
 
 function App() {
   return (
@@ -24,8 +24,8 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:blogId" element={<SingleBlog />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="jobs" element={<GetJobs />} />
-          <Route path="jobs/:jobId" element={<SingleJob />} />
+          <Route path="/jobs" element={<GetJobs />} />
+          <Route path="/jobs/:id" element={<JobDetail />} />
         </Routes>
       </BrowserRouter>
     </div>
