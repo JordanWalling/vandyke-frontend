@@ -7,9 +7,9 @@ const CreateJob = () => {
           <label>Job Number:</label>
           <input
             type="number"
-            value={number}
+            value={jobNumber}
             placeholder="Enter Job Number"
-            onChange={(e) => setNumber(e.target.value)}
+            onChange={(e) => setJobNumber(e.target.value)}
           />
         </div>
         <div>
@@ -27,3 +27,5 @@ const CreateJob = () => {
     </div>
   );
 };
+
+export default CreateJob;

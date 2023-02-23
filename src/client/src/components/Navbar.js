@@ -18,7 +18,10 @@ const Navbar = () => {
             <NavLink to="dashboard">Dashboard</NavLink>
           </li>
           <li>
-            <NavLink to="blog/:_id">Edit Blog</NavLink>
+            <NavLink to="blogs/:id">Edit Blog</NavLink>
+          </li>
+          <li>
+            <NavLink to="jobs">Jobs</NavLink>
           </li>
         </ul>
       </nav>

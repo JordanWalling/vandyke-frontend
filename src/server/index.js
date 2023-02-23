@@ -4,7 +4,7 @@ const cors = require("cors");
 const jobRoutes = require("./routes/job");
 const blogRoutes = require("./routes/blog");
 const userRoutes = require("./routes/user");
-
+const morgan = require("morgan");
 require("dotenv").config();
 
 const app = express();
@@ -17,6 +17,7 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(cors());
+app.use(morgan("dev"));
 
 // route middleware
 app.use("/api", jobRoutes);

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages import
 import Home from "./pages/Home";
@@ -9,8 +9,9 @@ import Dashboard from "./pages/Dashboard";
 
 // component imports
 import Navbar from "./components/Navbar";
-import EditBlog from "./pages/EditBlog";
+import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
+import SingleJob from "./pages/SingleJob";
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="blogs" element={<Blogs />} />
-          <Route path="blog/:_id" element={<EditBlog />} />
+          <Route path="blogs/:blogId" element={<SingleBlog />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="jobs" element={<GetJobs />} />
+          <Route path="jobs/:jobId" element={<SingleJob />} />
         </Routes>
       </BrowserRouter>
     </div>

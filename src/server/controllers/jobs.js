@@ -3,7 +3,7 @@ const Job = require("../models/jobs");
 // GET ALL THE JOBS
 const getJobs = async (req, res) => {
   try {
-    const allJobs = await Job.find({}).sort("createdAt");
+    const allJobs = await Job.find({});
     res.status(200).json(allJobs);
   } catch (err) {
     console.log(err);
@@ -32,12 +32,12 @@ const getJob = async (req, res) => {
 const createJob = async (req, res) => {
   const { number, company, status } = req.body;
 
-  const job = await Job.findOne({ number });
+  const job = await Job.findOne({ jobNumber });
 
   if (job) {
     return res.json({ error: "Job already exists" });
   }
-  if (!number) {
+  if (!jobNumber) {
     return res.json({ error: "Please provide a number" });
   }
   if (!company) {
@@ -45,7 +45,7 @@ const createJob = async (req, res) => {
   }
   try {
     const job = await Job.create({
-      number,
+      jobNumber,
       company,
       status,
     });
@@ -59,12 +59,12 @@ const createJob = async (req, res) => {
 // UPDATE A JOB
 const updateJob = async (req, res) => {
   const {
-    body: { company, number, status },
+    body: { company, jobNumber, status },
     params: { id: jobId },
   } = req;
 
   try {
-    if (company === "" || number === "" || jobId === "") {
+    if (company === "" || jobNumber === "" || jobId === "") {
       res.json({ error: "Please fill in all fields" });
     }
 
