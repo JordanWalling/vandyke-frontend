@@ -10,7 +10,7 @@ const Products = () => {
       <div className={classes.container}>
         <div className={classes.card}>
           <div className={classes.imgbox}>
-            <img src={inkRoll} />
+            <img className={classes.productImages} src={inkRoll} alt="label" />
           </div>
           <div className={classes.content}>
             <h2>In Mould Labels</h2>
@@ -18,9 +18,10 @@ const Products = () => {
             <button>Read More</button>
           </div>
         </div>
+
         <div className={classes.card}>
           <div className={classes.imgbox}>
-            <img src={hsl} />
+            <img className={classes.productImages} src={hsl} alt="label" />
           </div>
           <div className={classes.content}>
             <h2>Heat Sealable Lidding</h2>
@@ -28,9 +29,10 @@ const Products = () => {
             <button>Read More</button>
           </div>
         </div>
+
         <div className={classes.card}>
           <div className={classes.imgbox}>
-            <img src={gpp} />
+            <img className={classes.productImages} src={gpp} alt="label" />
           </div>
           <div className={classes.content}>
             <h2>Grease Proof Packaging</h2>

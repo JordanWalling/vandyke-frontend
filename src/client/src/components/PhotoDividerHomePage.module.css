@@ -1,0 +1,41 @@
+.divideSection {
+  height: 28vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+}
+
+.divideContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.divideContainer img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  background-color: black;
+  transform: translateY(100%);
+}
+
+.divideContainer:hover .caption {
+  transform: translateY(0);
+}
+
+.divideContainer:hover img {
+  transform: translateY(-30%);
+}
