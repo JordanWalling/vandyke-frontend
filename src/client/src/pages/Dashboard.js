@@ -2,6 +2,7 @@ import { useState } from "react";
 import CreateBlog from "../components/CreateBlog";
 import CreateJob from "../components/CreateJob";
 import axios from "axios";
+import JobDetail from "./JobDetail";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -61,7 +62,11 @@ const Dashboard = () => {
         company,
         status,
       });
+      console.log("Job Created =>");
       console.log(data);
+      if (data.job) {
+        return new Error("Job already exists");
+      }
     } catch (err) {
       console.log(err);
     }

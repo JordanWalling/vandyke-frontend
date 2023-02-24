@@ -32,14 +32,17 @@ const CreateJob = ({
         <div>
           <label htmlFor="status">Job Status</label>
           <select
+            type="string"
             value={status}
+            defaultValue={"default"}
             onChange={(e) => setStatus(e.target.value)}
             name="status"
           >
-            <option value="created">job created</option>
-            <option value="progress">job in progress</option>
-            <option value="completed">job completed</option>
-            <option value="sent">job sent</option>
+            <option value={"default"}>Choose an option</option>
+            <option value={"created"}>Job Created</option>
+            <option value={"progress"}>job in progress</option>
+            <option value={"completed"}>job completed</option>
+            <option value={"sent"}>job sent</option>
           </select>
         </div>
 

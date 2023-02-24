@@ -41,7 +41,10 @@ const createJob = async (req, res) => {
     return res.json({ error: "Please provide a number" });
   }
   if (!company) {
-    return res.json({ error: "Please provide company company" });
+    return res.json({ error: "Please provide a company" });
+  }
+  if (!status) {
+    return res.json({ error: "please provide a status option" });
   }
   try {
     const job = await Job.create({
