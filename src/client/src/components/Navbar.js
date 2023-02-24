@@ -1,11 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
+import classes from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
     <div>
       <nav>
-        <ul>
-          <li>
+        <ul className={classes.container}>
+          <li className={classes.listItem}>
             <Link to="/">Van Dyke Press</Link>
           </li>
           <li>
