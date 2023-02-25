@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreateBlog from "../components/CreateBlog";
 import CreateJob from "../components/CreateJob";
+import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
 import JobDetail from "./JobDetail";
 
@@ -94,6 +95,7 @@ const Dashboard = () => {
         setStatus={setStatus}
         handleJobSubmit={handleJobSubmit}
       />
+      <UpdateJobForm />
     </div>
   );
 };

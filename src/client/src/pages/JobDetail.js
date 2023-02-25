@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const JobDetail = () => {
+const JobDetail = ({ number, company, status }) => {
   const [job, setJob] = useState([]);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const fetchJob = async () => {
     try {
@@ -33,6 +33,10 @@ const JobDetail = () => {
     }
   };
 
+  // JOB HANDLE UPDATE
+  const handleJobUpdate = () => {
+    navigate(`/jobs/update/${id}`);
+  };
   return (
     <>
       <div>
@@ -42,6 +46,9 @@ const JobDetail = () => {
         <h2>{job.id}</h2>
         <span>
           <button onClick={handleJobDelete}>Delete</button>
+        </span>
+        <span>
+          <button onClick={handleJobUpdate}>Update</button>
         </span>
       </div>
       ;

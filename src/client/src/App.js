@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
 import Dashboard from "./pages/Dashboard";
+import UpdateJobForm from "./pages/UpdateJobForm";
 
 // component imports
 import Navbar from "./components/Navbar";
@@ -26,6 +27,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="/jobs" element={<GetJobs />} />
           <Route path="/jobs/:id" element={<JobDetail />} />
+          <Route path="/jobs/update/:id" element={<UpdateJobForm />} />
         </Routes>
       </BrowserRouter>
     </div>
