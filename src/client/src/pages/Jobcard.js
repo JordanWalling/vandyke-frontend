@@ -6,17 +6,21 @@ const JobCard = ({ job }) => {
   // const { number, company, status, _id } = job;
 
   return (
-    // <div className={classes.JobCardContainers}>
-    <div className={classes.JobCardInfo} key={_id}>
-      <h3>{company}</h3>
-      <div>Job Number: {number}</div>
-      <div>Job Status: {status} </div>
-      <div>Job Id: {_id} </div>
-      <button>
-        <Link to={`/jobs/${_id}`}>{company}</Link>
-      </button>
+    <div className={classes.jobCardContainer}>
+      <h1 className={classes.jobCardHeading}></h1>
+
+      <div className={classes.jobCardBoxContainer}>
+        <div className={classes.jobCardBox}>
+          <h2>{company}</h2>
+          <h3>Job Status: {status}</h3>
+          <h3>Job Number: {number}</h3>
+          <h3>Job Id: {_id}</h3>
+          <button>
+            <Link to={`/jobs/${_id}`}>{company}</Link>
+          </button>
+        </div>
+      </div>
     </div>
-    // </div>
   );
 };
 

@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <div>
       <form className="form">
@@ -7,7 +14,7 @@ const ContactUs = () => {
           <label htmlFor="name">Name:</label>
           <input
             type="text"
-            //value="name"
+            value={name}
             placeholder="Please enter your name"
           />
         </div>
@@ -15,7 +22,7 @@ const ContactUs = () => {
           <label htmlFor="phone">Phone Number:</label>
           <input
             type="number"
-            //value="phone"
+            value={phoneNumber}
             placeholder="Please enter your Phone Number"
           />
         </div>
@@ -23,8 +30,16 @@ const ContactUs = () => {
           <label htmlFor="email">Email:</label>
           <input
             type="email"
-            //value="email"
+            value={email}
             placeholder="Please enter your email address"
+          />
+        </div>
+        <div>
+          <label>Enquiry:</label>
+          <input
+            type="text"
+            value={message}
+            placeholder="Please type any enquiries"
           />
         </div>
         <button>Submit</button>

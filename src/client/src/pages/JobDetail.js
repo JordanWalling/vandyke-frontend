@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import classes from "../components/JobDetail.module.css";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -38,21 +39,24 @@ const JobDetail = ({ number, company, status }) => {
     navigate(`/jobs/update/${id}`);
   };
   return (
-    <>
-      <div>
-        <h1>{job.company}</h1>
-        <h2>{job.status}</h2>
-        <h2>{job.number}</h2>
-        <h2>{job.id}</h2>
-        <span>
-          <button onClick={handleJobDelete}>Delete</button>
-        </span>
-        <span>
-          <button onClick={handleJobUpdate}>Update</button>
-        </span>
+    <div className={classes.jobDetailContainer}>
+      <h1 className={classes.jobDetailHeading}>Single Job Page</h1>
+
+      <div className={classes.jobDetailBoxContainer}>
+        <div className={classes.jobDetailBox}>
+          <h1>{job.company}</h1>
+          <h2>{job.status}</h2>
+          <h2>{job.number}</h2>
+          <h2>{job.id}</h2>
+          <span>
+            <button onClick={handleJobDelete}>Delete</button>
+          </span>
+          <span>
+            <button onClick={handleJobUpdate}>Update</button>
+          </span>
+        </div>
       </div>
-      ;
-    </>
+    </div>
   );
 };
 
