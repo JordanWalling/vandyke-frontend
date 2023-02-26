@@ -12,6 +12,7 @@ const UpdateJobForm = () => {
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState("");
   const [id, setId] = useState("");
+  const [notes, setNotes] = useState("");
 
   useEffect(() => {
     fetchJob();
@@ -26,6 +27,7 @@ const UpdateJobForm = () => {
       setCompany(data.company);
       setStatus(data.status);
       setId(data.id);
+      setNotes(data.notes);
     } catch (err) {
       console.log(err);
     }
@@ -38,6 +40,7 @@ const UpdateJobForm = () => {
         number,
         company,
         status,
+        notes,
       });
       console.log("Job Updated");
       console.log(data);
@@ -70,6 +73,15 @@ const UpdateJobForm = () => {
             value={company}
             placeholder="Add Company Name"
             onChange={(e) => setCompany(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Notes:</label>
+          <textarea
+            type="text"
+            value={notes}
+            placeholder="Add Notes or n/a"
+            onChange={(e) => setNotes(e.target.value)}
           />
         </div>
         <div>

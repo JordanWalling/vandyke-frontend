@@ -4,10 +4,12 @@ import CreateJob from "../components/CreateJob";
 import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
 import JobDetail from "./JobDetail";
+import { useNavigate } from "react-router-dom";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   // state to create blogs
   const [content, setContent] = useState("");
   const [title, setTitle] = useState("");
@@ -16,6 +18,7 @@ const Dashboard = () => {
   const [number, setNumber] = useState("");
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState("");
+  const [notes, setNotes] = useState("");
 
   // handle image
   const handleImage = async (e) => {
@@ -62,9 +65,11 @@ const Dashboard = () => {
         number,
         company,
         status,
+        notes,
       });
       console.log("Job Created =>");
       console.log(data);
+      navigate("/jobs");
       if (data.job) {
         return new Error("Job already exists");
       }
@@ -94,8 +99,9 @@ const Dashboard = () => {
         status={status}
         setStatus={setStatus}
         handleJobSubmit={handleJobSubmit}
+        notes={notes}
+        setNotes={setNotes}
       />
-      <UpdateJobForm />
     </div>
   );
 };

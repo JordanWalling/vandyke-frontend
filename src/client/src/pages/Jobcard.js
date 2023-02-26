@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import classes from "../components/JobCard.module.css";
 
 const JobCard = ({ job }) => {
-  const { _id, number, status, company } = job;
+  const { _id, number, status, company, notes } = job;
   // const { number, company, status, _id } = job;
 
   return (
@@ -15,8 +15,9 @@ const JobCard = ({ job }) => {
           <h3>Job Status: {status}</h3>
           <h3>Job Number: {number}</h3>
           <h3>Job Id: {_id}</h3>
+
           <button>
-            <Link to={`/jobs/${_id}`}>{company}</Link>
+            <Link to={`/jobs/${_id}`}>Job Information</Link>
           </button>
         </div>
       </div>

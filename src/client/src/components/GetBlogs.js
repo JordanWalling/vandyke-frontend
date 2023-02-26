@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import classes from "./GetBlogs.module.css";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -25,14 +26,16 @@ const GetBlogs = () => {
 
   return (
     <div>
-      <h1>Blogs</h1>
+      <h2>Blogs</h2>
       {blogs.map((blog) => (
-        <div key={blog._id}>
-          <div>{blog.title}</div>
-          <div>{blog.content}</div>
-          <img src={blog?.image?.url} alt={blog.title} />
-
-          <Link to={`/blogs/${blogId}}`}>Link</Link>
+        <div className={classes.container}>
+          <div className={classes.ul} key={blog._id}>
+            <div className={classes.li}>
+              <h4>{blog.title}</h4>
+              <img src={blog?.image?.url} alt={blog.title} />
+              <p>{blog.content}</p>
+            </div>
+          </div>
         </div>
       ))}
     </div>

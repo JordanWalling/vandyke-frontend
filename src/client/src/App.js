@@ -13,6 +13,7 @@ import Navbar from "./components/Navbar";
 import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
 import JobDetail from "./pages/JobDetail";
+import PracticeGrid from "./components/PracticeGrid";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/jobs" element={<GetJobs />} />
           <Route path="/jobs/:id" element={<JobDetail />} />
           <Route path="/jobs/update/:id" element={<UpdateJobForm />} />
+          <Route path="/practice-grid" element={<PracticeGrid />} />
         </Routes>
       </BrowserRouter>
     </div>

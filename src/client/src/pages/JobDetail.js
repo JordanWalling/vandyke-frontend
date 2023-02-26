@@ -5,7 +5,7 @@ import classes from "../components/JobDetail.module.css";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const JobDetail = ({ number, company, status }) => {
+const JobDetail = ({ number, company, status, notes }) => {
   const [job, setJob] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -29,6 +29,7 @@ const JobDetail = ({ number, company, status }) => {
     try {
       const { data } = await axios.delete(`${BASE_URL}/job/${id} `);
       console.log("Job Deleted" - data);
+      navigate("/jobs");
     } catch (err) {
       console.log(err);
     }
@@ -38,6 +39,11 @@ const JobDetail = ({ number, company, status }) => {
   const handleJobUpdate = () => {
     navigate(`/jobs/update/${id}`);
   };
+
+  // HANDLE JOB RETURN
+  const handleJobReturn = () => {
+    navigate("/jobs");
+  };
   return (
     <div className={classes.jobDetailContainer}>
       <h1 className={classes.jobDetailHeading}>Single Job Page</h1>
@@ -45,14 +51,19 @@ const JobDetail = ({ number, company, status }) => {
       <div className={classes.jobDetailBoxContainer}>
         <div className={classes.jobDetailBox}>
           <h1>{job.company}</h1>
-          <h2>{job.status}</h2>
-          <h2>{job.number}</h2>
-          <h2>{job.id}</h2>
+          <h3>{job.status}</h3>
+          <h3>{job.number}</h3>
+          <h3>{job.id}</h3>
+          <p>{job.notes}</p>
+
           <span>
             <button onClick={handleJobDelete}>Delete</button>
           </span>
           <span>
             <button onClick={handleJobUpdate}>Update</button>
+          </span>
+          <span>
+            <button onClick={handleJobReturn}>Back to Jobs</button>
           </span>
         </div>
       </div>

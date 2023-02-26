@@ -6,6 +6,8 @@ const CreateJob = ({
   status,
   setStatus,
   handleJobSubmit,
+  notes,
+  setNotes,
 }) => {
   return (
     <div>
@@ -27,6 +29,15 @@ const CreateJob = ({
             value={company}
             placeholder="Add Company Name"
             onChange={(e) => setCompany(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Notes:</label>
+          <textarea
+            type="text"
+            value={notes}
+            placeholder="Add any note or N/A"
+            onChange={(e) => setNotes(e.target.value)}
           />
         </div>
         <div>

@@ -20,6 +20,10 @@ const ContactUs = () => {
       });
       console.log("Email Created");
       console.log(data);
+      setName("");
+      setPhoneNumber("");
+      setUserEmail("");
+      setMessage("");
     } catch (err) {
       console.log(err);
     }

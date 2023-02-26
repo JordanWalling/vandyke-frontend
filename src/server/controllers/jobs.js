@@ -30,7 +30,7 @@ const getJob = async (req, res) => {
 
 // CREATE A JOB
 const createJob = async (req, res) => {
-  const { number, company, status } = req.body;
+  const { number, company, status, notes } = req.body;
 
   const job = await Job.findOne({ number });
 
@@ -51,6 +51,7 @@ const createJob = async (req, res) => {
       number,
       company,
       status,
+      notes,
     });
     job.save();
     res.status(200).json({ job });
