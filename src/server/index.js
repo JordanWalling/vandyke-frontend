@@ -4,6 +4,8 @@ const cors = require("cors");
 const jobRoutes = require("./routes/job");
 const blogRoutes = require("./routes/blog");
 const userRoutes = require("./routes/user");
+const emailRoutes = require("./routes/email");
+
 const morgan = require("morgan");
 require("dotenv").config();
 
@@ -23,6 +25,7 @@ app.use(morgan("dev"));
 app.use("/api", jobRoutes);
 app.use("/api", blogRoutes);
 app.use("/api", userRoutes);
+app.use("/api", emailRoutes);
 
 port = process.env.PORT;
 
