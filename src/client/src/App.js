@@ -7,6 +7,7 @@ import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
 import Dashboard from "./pages/Dashboard";
 import UpdateJobForm from "./pages/UpdateJobForm";
+import Login from "./pages/Login";
 
 // component imports
 import Navbar from "./components/Navbar";
@@ -25,11 +26,14 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:blogId" element={<SingleBlog />} />
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="/jobs" element={<GetJobs />} />
-          <Route path="/jobs/:id" element={<JobDetail />} />
-          <Route path="/jobs/update/:id" element={<UpdateJobForm />} />
-          <Route path="/practice-grid" element={<PracticeGrid />} />
+          <Route path="login" element={<Login />}>
+            <Route path="dashboard" element={<Dashboard />}>
+              <Route path="jobs" element={<GetJobs />} />
+              <Route path="jobs/:id" element={<JobDetail />} />
+              <Route path="jobs/update/:id" element={<UpdateJobForm />} />
+              <Route path="practice-grid" element={<PracticeGrid />} />
+            </Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
