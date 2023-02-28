@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { useState } from "react";
 import CreateBlog from "../components/CreateBlog";
 import CreateJob from "../components/CreateJob";
@@ -8,6 +9,19 @@ import { Link, useNavigate } from "react-router-dom";
 import GetEmails from "../components/GetEmails";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+const Banner = styled.div`
+  height: 22vh;
+  background-image: linear-gradient(to right, #090979, #00d4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Title = styled.h2`
+  color: #fff;
+  font-size: 5rem;
+`;
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -84,7 +98,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h2>Dashboard</h2>
+      <Banner>
+        <Title>Welcome, User</Title>
+      </Banner>
       <h3>Create a Blog</h3>
       <CreateBlog
         content={content}
