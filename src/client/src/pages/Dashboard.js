@@ -101,7 +101,6 @@ const Dashboard = () => {
       <Banner>
         <Title>Welcome, User</Title>
       </Banner>
-      <h3>Create a Blog</h3>
       <CreateBlog
         content={content}
         setContent={setContent}
