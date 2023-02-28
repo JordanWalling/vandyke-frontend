@@ -1,52 +1,9 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  /* border: 2px solid red; */
+.navbarImage {
+  height: 100%;
+  width: 3rem;
 }
 
-.container {
-  width: 100%;
-  height: 4rem;
-  background-color: blue;
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* padding-top: 0.5rem; */
-  z-index: 8;
-}
-
-.navLeft {
-  flex: 3;
-  justify-content: flex-start;
-}
-
-.navLeft .navLink {
-  color: white;
+.navLink {
   text-decoration: none;
-}
-
-.navLeft img {
-  object-fit: contain;
-  padding-top: 10%;
-  height: 7.1rem;
-  transform: translateY(-1.5rem);
-}
-
-.navRight {
-  flex: 5;
-}
-
-.navList {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-}
-
-li .navLink {
   color: white;
-  text-decoration: none;
 }
