@@ -15,6 +15,7 @@ import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
 import JobDetail from "./pages/JobDetail";
 import PracticeGrid from "./components/PracticeGrid";
+import GetEmails from "./components/GetEmails";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path="jobs/:id" element={<JobDetail />} />
               <Route path="jobs/update/:id" element={<UpdateJobForm />} />
               <Route path="practice-grid" element={<PracticeGrid />} />
+              <Route path="emails" element={<GetEmails />} />
             </Route>
           </Route>
         </Routes>

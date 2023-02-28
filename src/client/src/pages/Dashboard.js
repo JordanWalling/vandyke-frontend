@@ -4,7 +4,8 @@ import CreateJob from "../components/CreateJob";
 import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
 import JobDetail from "./JobDetail";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import GetEmails from "../components/GetEmails";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -19,6 +20,9 @@ const Dashboard = () => {
   const [company, setCompany] = useState("");
   const [status, setStatus] = useState("");
   const [notes, setNotes] = useState("");
+
+  // state to get emails
+  const [emails, setEmails] = useState([]);
 
   // handle image
   const handleImage = async (e) => {
@@ -81,6 +85,7 @@ const Dashboard = () => {
   return (
     <div>
       <h2>Dashboard</h2>
+      <h3>Create a Blog</h3>
       <CreateBlog
         content={content}
         setContent={setContent}
@@ -91,6 +96,7 @@ const Dashboard = () => {
         setImage={setImage}
         handleImage={handleImage}
       />
+      <h3>Create a Job</h3>
       <CreateJob
         number={number}
         setNumber={setNumber}
@@ -102,6 +108,7 @@ const Dashboard = () => {
         notes={notes}
         setNotes={setNotes}
       />
+      <GetEmails emails={emails} setEmails={setEmails} />
     </div>
   );
 };
