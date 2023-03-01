@@ -7,16 +7,8 @@ import axios from "axios";
 import JobDetail from "./JobDetail";
 import { Link, useNavigate } from "react-router-dom";
 import GetEmails from "../components/GetEmails";
-
+import Banner from "../components/Banner";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
-
-const Banner = styled.div`
-  height: 22vh;
-  background-image: linear-gradient(to right, #090979, #00d4ff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 const Title = styled.h2`
   color: #fff;

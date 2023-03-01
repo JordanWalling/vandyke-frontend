@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import classes from "./CreateBlog.module.css";
+import { Wrapper, Label, Title, Input } from "./FormStyling";
 
 const CreateBlog = ({
   content,
@@ -11,27 +12,6 @@ const CreateBlog = ({
   setImage,
   handleImage,
 }) => {
-  const Wrapper = styled.div`
-    border: 2px solid red;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    height: 50vh;
-  `;
-
-  const Label = styled.label`
-    font-size: 2rem;
-  `;
-
-  const Title = styled.h2`
-    font-size: 3rem;
-    padding: 1rem 0;
-  `;
-
-  const Input = styled.input`
-    font-size: 1.5rem;
-    padding-left: 0.25rem;
-  `;
   return (
     <Wrapper>
       <form className={classes.Form} onSubmit={handleSubmit}>
@@ -47,7 +27,7 @@ const CreateBlog = ({
         </div>
         <div>
           <Label>
-            <input type="file" accept="images/*" onChange={handleImage} />
+            <Input type="file" accept="images/*" onChange={handleImage} />
           </Label>
         </div>
         <div>
