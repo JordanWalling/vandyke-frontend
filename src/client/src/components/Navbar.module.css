@@ -1,9 +1,10 @@
 .navbarImage {
   height: 100%;
-  width: 3rem;
+  width: 5rem;
 }
 
 .navLink {
   text-decoration: none;
   color: white;
+  font-size: 2rem;
 }

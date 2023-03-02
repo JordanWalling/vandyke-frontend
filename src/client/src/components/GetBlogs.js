@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import classes from "./GetBlogs.module.css";
+import {
+  Container,
+  Title,
+  Card,
+  Image,
+  MainHeading,
+  HeroContainer,
+  GridBody,
+} from "./BlogStyling";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -26,20 +34,32 @@ const GetBlogs = () => {
 
   return (
     <div>
-      <h2>Blogs</h2>
-      {blogs.map((blog) => (
-        <div className={classes.container}>
-          <div className={classes.ul} key={blog._id}>
-            <div className={classes.li}>
-              <h4>{blog.title}</h4>
-              <img src={blog?.image?.url} alt={blog.title} />
+      <HeroContainer>
+        <MainHeading>Blogs</MainHeading>
+      </HeroContainer>
+      <GridBody>
+        <Container>
+          {blogs.map((blog) => (
+            <Card>
+              <Image src={blog?.image?.url} alt={blog.title} />
+              <Title>{blog.title}</Title>
               <p>{blog.content}</p>
-            </div>
-          </div>
-        </div>
-      ))}
+            </Card>
+          ))}
+        </Container>
+      </GridBody>
     </div>
   );
 };
 
 export default GetBlogs;
+
+{
+  /* <div key={blog._id}>
+<div>
+  <Title>{blog.title}</Title>
+  <img src={blog?.image?.url} alt={blog.title} />
+  <p>{blog.content}</p>
+</div>
+</div> */
+}

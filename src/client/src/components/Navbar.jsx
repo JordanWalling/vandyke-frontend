@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Container = styled.div`
   background: #cddeee;
   justify-content: center;
-  height: 3rem;
+  height: 5rem;
   display: flex;
   position: sticky;
   z-index: 9;
@@ -24,7 +24,7 @@ const NavList = styled.div`
 `;
 const NavItems = styled.div`
   list-style-type: none;
-  padding-top: 0.75rem;
+  padding-top: 1rem;
 `;
 
 const Navbar = () => {
