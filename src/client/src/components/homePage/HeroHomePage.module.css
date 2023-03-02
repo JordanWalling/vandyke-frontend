@@ -10,26 +10,34 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../assets/vdp_granola_roll.png");
+  background-image: url("../../assets/vdp_granola_roll.png");
+  background: linear-gradient(rgba(0, 0, 0, 1));
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .heroCenter {
-  border: 2px solid red;
   color: #fff;
 }
 
 .heroTitle {
   text-transform: uppercase;
   z-index: 1;
-  font-size: 5rem;
+  font-size: 10rem;
 }
 
 .heroSubTitle {
   color: rgb(241, 249, 16);
   letter-spacing: 0.25rem;
+  font-size: 5rem;
+}
+
+.heroSubTitle strong {
+  font-size: 7rem;
+  text-transform: uppercase;
 }
 .heroImage {
-  background: linear-gradient(rgba(0, 0, 0, 1)) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 1));
 }
 
 .btn {

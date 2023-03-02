@@ -1,5 +1,5 @@
-import backgroundImage from "../assets/background_image_home.webp";
-import classes from "../components/PhotoDividerHomePage.module.css";
+import backgroundImage from "../../assets/background_image_home.webp";
+import classes from "../../components/homePage/PhotoDividerHomePage.module.css";
 
 const PhotoDividerHomePage = () => {
   return (

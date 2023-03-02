@@ -1,6 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import classes from "./Navbar.module.css";
-import vdp_logo from "../assets/logo.png";
+import vdp_logo from "../../assets/logo.png";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -57,8 +57,8 @@ const Navbar = () => {
             </NavLink>
           </NavItems>
           <NavItems>
-            <NavLink className={classes.navLink} to="blogs/:id">
-              Edit Blog
+            <NavLink className={classes.navLink} to="emails">
+              Emails
             </NavLink>
           </NavItems>
           <NavItems>

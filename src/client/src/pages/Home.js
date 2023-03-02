@@ -1,6 +1,6 @@
-import HeroHomePage from "../components/HeroHomePage";
+import HeroHomePage from "../components/homePage/HeroHomePage";
 import Products from "../components/Products";
-import PhotoDividerHomePage from "../components/PhotoDividerHomePage";
+import PhotoDividerHomePage from "../components/homePage/PhotoDividerHomePage";
 
 const Home = () => {
   return (

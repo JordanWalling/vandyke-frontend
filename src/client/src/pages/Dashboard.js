@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { useState } from "react";
-import CreateBlog from "../components/CreateBlog";
+import CreateBlog from "../components/CreateBlog/CreateBlog";
 import CreateJob from "../components/CreateJob";
 import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
 import JobDetail from "./JobDetail";
 import { Link, useNavigate } from "react-router-dom";
 import GetEmails from "../components/GetEmails";
-import Banner from "../components/Banner";
+import Banner from "../components/dashboard/Banner";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Title = styled.h2`
@@ -115,7 +115,6 @@ const Dashboard = () => {
         notes={notes}
         setNotes={setNotes}
       />
-      <GetEmails emails={emails} setEmails={setEmails} />
     </div>
   );
 };

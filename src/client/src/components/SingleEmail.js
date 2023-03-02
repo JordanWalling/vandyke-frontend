@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 
-const SingleEmail = ({ emails }) => {
-  const { _id, phoneNumber, userEmail, name, message } = emails;
-
+const SingleEmail = ({ email }) => {
+  const { name, phoneNumber, userEmail, message, id } = email;
   return (
     <div>
-      <h1></h1>
-
       <div>
         <div>
           <h2>Name: {name}</h2>
@@ -15,7 +12,7 @@ const SingleEmail = ({ emails }) => {
           <p>message: {message}</p>
 
           <button>
-            <Link to={`login/dashboard/email/${_id}`}>Email information</Link>
+            <Link to={`login/dashboard/email/${id}`}>Email information</Link>
           </button>
         </div>
       </div>
