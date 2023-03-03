@@ -15,7 +15,7 @@ const getEmail = async (req, res) => {
   const { params: _id } = req;
   try {
     const email = await Email.findOne({
-      _id,
+      id: _id,
     });
     if (!email) {
       return res.json({ error: "Email not found" });

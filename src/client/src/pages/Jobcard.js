@@ -3,7 +3,6 @@ import classes from "../components/JobCard.module.css";
 
 const JobCard = ({ job }) => {
   const { _id, number, status, company, notes } = job;
-  // const { number, company, status, _id } = job;
 
   return (
     <div className={classes.jobCardContainer}>

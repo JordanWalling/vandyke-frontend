@@ -15,6 +15,8 @@ import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
 import JobDetail from "./pages/JobDetail";
 import GetEmails from "./components/GetEmails";
+import SingleEmail from "./components/SingleEmail";
+import SingleEmailDesc from "./components/SingleEmailDesc";
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs/:blogId" element={<SingleBlog />} />
           <Route path="emails" element={<GetEmails />} />
-
+          <Route path="email/:id" element={<SingleEmailDesc />} />
           <Route path="login" element={<Login />}>
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="jobs" element={<GetJobs />} />

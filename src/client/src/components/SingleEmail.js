@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import SingleEmailDesc from "./SingleEmailDesc";
 
 const SingleEmail = ({ email }) => {
-  const { name, phoneNumber, userEmail, message, id } = email;
+  const { name, phoneNumber, userEmail, message, _id } = email;
   return (
     <div>
       <div>
@@ -12,7 +13,7 @@ const SingleEmail = ({ email }) => {
           <p>message: {message}</p>
 
           <button>
-            <Link to={`login/dashboard/email/${id}`}>Email information</Link>
+            <Link to={`/email/${_id}`}>Email information</Link>
           </button>
         </div>
       </div>
