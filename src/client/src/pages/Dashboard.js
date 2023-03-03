@@ -6,7 +6,7 @@ import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
 import JobDetail from "./JobDetail";
 import { Link, useNavigate } from "react-router-dom";
-import GetEmails from "../components/GetEmails";
+import GetEmails from "../components/emails/GetEmails";
 import Banner from "../components/dashboard/Banner";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 

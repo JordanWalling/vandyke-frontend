@@ -14,9 +14,9 @@ import Navbar from "./components/navbar/Navbar";
 import SingleBlog from "./pages/SingleBlog";
 import GetJobs from "./components/GetJobs";
 import JobDetail from "./pages/JobDetail";
-import GetEmails from "./components/GetEmails";
-import SingleEmail from "./components/SingleEmail";
-import SingleEmailDesc from "./components/SingleEmailDesc";
+import GetEmails from "./components/emails/GetEmails";
+import SingleEmailDesc from "./components/emails/SingleEmailDesc";
+import SingleEmail from "./components/emails/SingleEmail";
 
 function App() {
   return (

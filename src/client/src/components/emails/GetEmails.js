@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleEmail from "./SingleEmail";
-import SingleEmailDesc from "./SingleEmailDesc";
+import { MainHeading } from "./SingleEmailStyles";
+
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const GetEmails = () => {
@@ -33,7 +34,8 @@ const GetEmails = () => {
 
   return (
     <div>
-      <h1>Emails</h1>
+      <MainHeading>Emails</MainHeading>
+
       {emails.map((email) => (
         <SingleEmail email={email} />
       ))}
