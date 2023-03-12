@@ -4,12 +4,13 @@ import vdp_logo from "../../assets/logo.png";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background: #cddeee;
+  background: #fff;
   justify-content: center;
   height: 5rem;
   display: flex;
   position: sticky;
   z-index: 9;
+  border-bottom: 2px solid #dedede;
 `;
 const NavLeft = styled.div`
   flex: 2;

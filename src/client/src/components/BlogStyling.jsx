@@ -13,20 +13,7 @@ export const HeroContainer = styled.div`
   align-items: center;
   justify-content: center;
   color: #fff;
-`;
-
-export const GridBody = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-export const Container = styled.div`
-  border: 2px solid red;
-  display: grid;
-  width: 90%;
-  justify-content: center;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const Title = styled.h4`
@@ -38,17 +25,43 @@ export const MainHeading = styled.h1`
   font-size: 5rem;
   padding: 1rem 0;
 `;
-export const Card = styled.div`
-  height: 30rem;
-  border: 2px solid purple;
-  padding: 1rem 0;
-  overflow: hidden;
-  border-radius: 1rem;
-`;
+
 export const Image = styled.img`
   height: 15rem;
   width: 15rem;
   padding: 1rem 0;
   overflow: hidden;
   border-radius: 2.5rem;
+`;
+
+export const BlogContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 3rem;
+  width: 80%;
+  margin: auto;
+`;
+
+export const BlogItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border: 2px solid grey;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 2px 2px #cdcbcb;
+  p {
+    display: none;
+    padding: 0 2rem;
+  }
+  div {
+    background-color: #fff;
+  }
+`;
+
+export const BlogsPage = styled.div`
+  background-color: #e8f7f8;
 `;

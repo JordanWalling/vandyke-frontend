@@ -1,10 +1,30 @@
 .navbarImage {
   height: 100%;
   width: 5rem;
+  border: 2px solid white;
 }
 
 .navLink {
   text-decoration: none;
-  color: white;
+  color: #045cac;
   font-size: 2rem;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid #045cac;
+  transition: 0.5s;
+}
+
+.navLink:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+}
+.navLink:hover:after {
+  width: 100%;
+  background: blue;
 }

@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import classes from "./GetBlogs.module.css";
 import {
-  Container,
+  BlogContainer,
   Title,
-  Card,
+  BlogItem,
   Image,
   MainHeading,
   HeroContainer,
-  GridBody,
+  BlogsPage,
+  //   GridBody,
 } from "./BlogStyling";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -33,33 +35,29 @@ const GetBlogs = () => {
   }, []);
 
   return (
-    <div>
+    <BlogsPage>
       <HeroContainer>
         <MainHeading>Blogs</MainHeading>
       </HeroContainer>
-      <GridBody>
-        <Container>
+      <section>
+        <BlogContainer>
           {blogs.map((blog) => (
-            <Card>
-              <Image src={blog?.image?.url} alt={blog.title} />
-              <Title>{blog.title}</Title>
-              <p>{blog.content}</p>
-            </Card>
+            <BlogItem>
+              <div>
+                <Image src={blog?.image?.url} alt={blog.title} />
+              </div>
+              <div>
+                <Title>{blog.title}</Title>
+              </div>
+              <div>
+                <p>{blog.content}</p>
+              </div>
+            </BlogItem>
           ))}
-        </Container>
-      </GridBody>
-    </div>
+        </BlogContainer>
+      </section>
+    </BlogsPage>
   );
 };
 
 export default GetBlogs;
-
-{
-  /* <div key={blog._id}>
-<div>
-  <Title>{blog.title}</Title>
-  <img src={blog?.image?.url} alt={blog.title} />
-  <p>{blog.content}</p>
-</div>
-</div> */
-}
