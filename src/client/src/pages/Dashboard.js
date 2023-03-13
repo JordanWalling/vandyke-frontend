@@ -4,7 +4,6 @@ import CreateBlog from "../components/CreateBlog/CreateBlog";
 import CreateJob from "../components/CreateJob";
 import UpdateJobForm from "../pages/UpdateJobForm";
 import axios from "axios";
-import JobDetail from "./JobDetail";
 import { Link, useNavigate } from "react-router-dom";
 import GetEmails from "../components/emails/GetEmails";
 import Banner from "../components/dashboard/Banner";
