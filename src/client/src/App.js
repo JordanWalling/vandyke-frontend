@@ -5,9 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import Blogs from "./pages/Blogs";
-import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./pages/DashboardLayout";
 import UpdateJobForm from "./pages/UpdateJobForm";
-import Login from "./pages/Login";
 import GetBlogs1 from "./components/GetBlogs1";
 import SingleJobDesc from "./pages/SingleJobDesc";
 
@@ -19,6 +18,8 @@ import SingleJob from "./components/SingleJob";
 import GetEmails from "./components/emails/GetEmails";
 import SingleEmailDesc from "./components/emails/SingleEmailDesc";
 import SingleEmail from "./components/emails/SingleEmail";
+import CreateJob from "./components/CreateJob";
+import CreateBlog from "./components/CreateBlog/CreateBlog";
 
 function App() {
   return (
@@ -33,11 +34,13 @@ function App() {
           <Route path="blogs/:blogId" element={<SingleBlog />} />
           <Route path="emails" element={<GetEmails />} />
           <Route path="email/:id" element={<SingleEmailDesc />} />
-          <Route path="jobs" element={<GetAllJobs />} />
-          <Route path="jobs/:id" element={<SingleJobDesc />} />
-          <Route path="jobs/update/:id" element={<UpdateJobForm />} />
-          <Route path="login" element={<Login />}>
-            <Route path="dashboard" element={<Dashboard />}></Route>
+          {/* <Route path="jobs" element={<GetAllJobs />} /> */}
+          <Route path="dashboard" element={<DashboardLayout />}>
+            <Route path="all-jobs" element={<GetAllJobs />} />
+            <Route path="job/:id" element={<SingleJobDesc />} />
+            <Route path="job/update/:id" element={<UpdateJobForm />} />
+            <Route path="create-job" element={<CreateJob />} />
+            <Route path="create-blog" element={<CreateBlog />} />
           </Route>
         </Routes>
       </BrowserRouter>

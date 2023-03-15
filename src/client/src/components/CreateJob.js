@@ -1,14 +1,38 @@
-const CreateJob = ({
-  number,
-  setNumber,
-  company,
-  setCompany,
-  status,
-  setStatus,
-  handleJobSubmit,
-  notes,
-  setNotes,
-}) => {
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const CreateJob = () => {
+  // state to create jobs
+  const [number, setNumber] = useState("");
+  const [company, setCompany] = useState("");
+  const [status, setStatus] = useState("");
+  const [notes, setNotes] = useState("");
+
+  const navigate = useNavigate();
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+  // CREATE JOB HANDLE SUBMIT
+  const handleJobSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(`${BASE_URL}/job`, {
+        number,
+        company,
+        status,
+        notes,
+      });
+      console.log("Job Created =>");
+      console.log(data);
+      navigate("/all-jobs");
+      if (data.job) {
+        return new Error("Job already exists");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <form className="form" onSubmit={handleJobSubmit}>

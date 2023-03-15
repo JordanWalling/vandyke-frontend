@@ -44,7 +44,7 @@ const UpdateJobForm = () => {
       });
       console.log("Job Updated");
       console.log(data);
-      navigate("/jobs");
+      navigate("/dashboard/all-jobs");
       if (data.job) {
         return new Error("Job already exists");
       }

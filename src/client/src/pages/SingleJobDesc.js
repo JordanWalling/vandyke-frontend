@@ -28,7 +28,7 @@ const SingleJobDesc = ({ number, company, status, notes }) => {
     try {
       const { data } = await axios.delete(`${BASE_URL}/job/${id} `);
       console.log("Job Deleted" - data);
-      navigate("/jobs");
+      navigate("/dashboard/all-jobs");
     } catch (err) {
       console.log(err);
     }
@@ -36,12 +36,12 @@ const SingleJobDesc = ({ number, company, status, notes }) => {
 
   // JOB HANDLE UPDATE
   const handleJobUpdate = () => {
-    navigate(`/jobs/update/${id}`);
+    navigate(`/dashboard/job/update/${id}`);
   };
 
   // HANDLE JOB RETURN
   const handleJobReturn = () => {
-    navigate("/jobs");
+    navigate("/dashboard/all-jobs");
   };
   return (
     <div>

@@ -16,7 +16,7 @@ const SingleJob = ({ job }) => {
           <h3>Job Id: {_id}</h3>
 
           <button>
-            <Link to={`/jobs/${_id}`}>Job Information</Link>
+            <Link to={`/dashboard/job/${_id}`}>Job Information</Link>
           </button>
         </div>
       </div>
