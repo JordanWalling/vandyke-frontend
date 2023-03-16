@@ -36,7 +36,7 @@ const SingleEmailDesc = ({ name, phoneNumber, userEmail, message }) => {
 
   // HANDLE EMAIL RETURN
   const handleEmailReturn = () => {
-    navigate("/emails");
+    navigate("/dashboard/emails");
   };
 
   return (

@@ -18,7 +18,7 @@ const SingleEmail = ({ email }) => {
           <SubSize>Email Address:</SubSize> {userEmail}
           <HideFullMessage>message:{message}</HideFullMessage>
           <button>
-            <Link to={`/email/${_id}`}>Email information</Link>
+            <Link to={`/dashboard/email/${_id}`}>Email information</Link>
           </button>
         </Container>
       </Wrapper>

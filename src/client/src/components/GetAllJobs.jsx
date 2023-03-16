@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SingleJob from "./SingleJob";
+import { Ul, Li } from "./GetAllJobsStyling";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -22,12 +23,14 @@ const GetAllJobs = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Jobs</h1>
+    <Ul>
+      {/* <h1>Jobs</h1> */}
       {jobs.map((job) => (
-        <SingleJob key={job._id} job={job} />
+        <Li>
+          <SingleJob key={job._id} job={job} />
+        </Li>
       ))}
-    </div>
+    </Ul>
   );
 };
 

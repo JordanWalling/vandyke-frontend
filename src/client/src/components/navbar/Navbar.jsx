@@ -43,6 +43,11 @@ const Navbar = () => {
       <NavRight>
         <NavList>
           <NavItems>
+            <NavLink className={classes.navLink} to="dashboard">
+              Dashboard
+            </NavLink>
+          </NavItems>
+          <NavItems>
             <NavLink className={classes.navLink} to="contact-us">
               Contact Us
             </NavLink>
@@ -52,37 +57,9 @@ const Navbar = () => {
               Blogs
             </NavLink>
           </NavItems>
-          <NavItems>
-            <NavLink className={classes.navLink} to="login">
-              Login
-            </NavLink>
-          </NavItems>
-          <NavItems>
-            <NavLink className={classes.navLink} to="emails">
-              Emails
-            </NavLink>
-          </NavItems>
-          <NavItems>
-            <NavLink className={classes.navLink} to="jobs">
-              Jobs
-            </NavLink>
-          </NavItems>
         </NavList>
       </NavRight>
     </Container>
   );
 };
 export default Navbar;
-
-//<div className={classes.container}>
-//       <div className={classes.navLeft}>
-//         <Link className={classes.navLink} to="/">
-//           <img src={vdp_logo} alt="van dyke logo" />
-//         </Link>
-//       </div>
-//       <div className={classes.navRight}>
-
-//       </div>
-//     </div>
-//   );
-// };

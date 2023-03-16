@@ -33,6 +33,9 @@ const Dashboard = () => {
         <Button>
           <Link to="create-blog">Create a Blog</Link>
         </Button>
+        <Button>
+          <Link to="emails">Emails</Link>
+        </Button>
       </Container>
       <Outlet />
     </div>

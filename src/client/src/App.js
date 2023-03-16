@@ -32,8 +32,6 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs1" element={<GetBlogs1 />} />
           <Route path="blogs/:blogId" element={<SingleBlog />} />
-          <Route path="emails" element={<GetEmails />} />
-          <Route path="email/:id" element={<SingleEmailDesc />} />
           {/* <Route path="jobs" element={<GetAllJobs />} /> */}
           <Route path="dashboard" element={<DashboardLayout />}>
             <Route path="all-jobs" element={<GetAllJobs />} />
@@ -41,6 +39,8 @@ function App() {
             <Route path="job/update/:id" element={<UpdateJobForm />} />
             <Route path="create-job" element={<CreateJob />} />
             <Route path="create-blog" element={<CreateBlog />} />
+            <Route path="emails" element={<GetEmails />} />
+            <Route path="email/:id" element={<SingleEmailDesc />} />
           </Route>
         </Routes>
       </BrowserRouter>
