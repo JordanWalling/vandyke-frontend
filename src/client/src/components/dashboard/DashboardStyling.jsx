@@ -4,13 +4,10 @@ export const Button = styled.button`
   border: 2px solid blue;
   border-radius: 0.75rem;
   padding: 1rem;
-  background-color: lightblue;
+  background-color: #045cac;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.25;
-  Link {
-    color: white;
-  }
 `;
 
 export const Container = styled.div`
@@ -18,4 +15,9 @@ export const Container = styled.div`
   justify-content: center;
   justify-content: space-around;
   padding: 3rem;
+  @media screen and (max-width: 430px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;

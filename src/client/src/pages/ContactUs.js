@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 import {
+  ContactContainer,
   Container,
   ContainerItem,
   ContactUsHeading,
@@ -42,7 +43,7 @@ const ContactUs = () => {
     }
   };
   return (
-    <>
+    <ContactContainer>
       <Banner>
         <ContactUsHeading>Contact Us</ContactUsHeading>
       </Banner>
@@ -100,7 +101,7 @@ const ContactUs = () => {
           <ContactUsButton onSubmit={handleEmailSubmit}>Submit</ContactUsButton>
         </ContactUsForm>
       </Container>
-    </>
+    </ContactContainer>
   );
 };
 export default ContactUs;

@@ -6,6 +6,7 @@ import styled from "styled-components";
 const Container = styled.div`
   background: #fff;
   justify-content: center;
+  align-items: center;
   height: 5rem;
   display: flex;
   position: sticky;
@@ -25,7 +26,7 @@ const NavList = styled.div`
 `;
 const NavItems = styled.div`
   list-style-type: none;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
 `;
 
 const Navbar = () => {

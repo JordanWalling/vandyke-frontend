@@ -1,5 +1,2 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  border: 2px solid red;
 }

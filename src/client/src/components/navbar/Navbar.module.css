@@ -1,7 +1,8 @@
 .navbarImage {
   height: 100%;
-  width: 5rem;
+  width: 3.5rem;
   border: 2px solid white;
+  padding-top: 0.5rem;
 }
 
 .navLink {

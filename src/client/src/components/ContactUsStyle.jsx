@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
+export const ContactContainer = styled.div`
+  height: 100vh;
+`;
 export const Container = styled.div`
+  /* padding-top: 5rem; */
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -8,7 +12,7 @@ export const Container = styled.div`
   border: 2px solid grey;
   width: 80vw;
   position: absolute;
-  height: 90%;
+  height: 100vh;
   margin-left: 10%;
   border-radius: 5px;
   box-shadow: 1px 2px 3px solid grey;
@@ -34,7 +38,7 @@ export const ContactUsForm = styled.form`
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding: 10px 5px;
+  padding: 20px 5px;
 `;
 
 export const FormItem = styled.div`
@@ -51,7 +55,7 @@ export const FormItem = styled.div`
   }
   textarea {
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     font-size: 2vw;
     :hover {
       background-color: #f1eeee;

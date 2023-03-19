@@ -8,7 +8,7 @@ import { Link, Outlet } from "react-router-dom";
 // import GetEmails from "../components/emails/GetEmails";
 import Banner from "../components/dashboard/Banner";
 import { Button, Container } from "../components/dashboard/DashboardStyling";
-
+import "../components/dashboard/DashboardLayout.css";
 const Title = styled.h2`
   color: #fff;
   font-size: 5rem;
@@ -25,16 +25,24 @@ const Dashboard = () => {
       </Banner>
       <Container>
         <Button>
-          <Link to="all-jobs">List of Jobs</Link>
+          <Link to="all-jobs" className={"btn-link"}>
+            List of Jobs
+          </Link>
         </Button>
         <Button>
-          <Link to="create-job">Create a Job</Link>
+          <Link to="create-job" className="btn-link">
+            Create a Job
+          </Link>
         </Button>
         <Button>
-          <Link to="create-blog">Create a Blog</Link>
+          <Link to="create-blog" className="btn-link">
+            Create a Blog
+          </Link>
         </Button>
         <Button>
-          <Link to="emails">Emails</Link>
+          <Link to="emails" className="btn-link">
+            Emails
+          </Link>
         </Button>
       </Container>
       <Outlet />

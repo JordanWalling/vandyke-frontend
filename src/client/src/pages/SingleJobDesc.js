@@ -1,7 +1,14 @@
+import { AiFillDelete } from "react-icons/ai";
+import { CiEdit } from "react-icons/ci";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-
+import {
+  Container,
+  Job,
+  JobItem,
+  Button,
+} from "../components/SingleJobDescStyling";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const SingleJobDesc = ({ number, company, status, notes }) => {
@@ -45,27 +52,41 @@ const SingleJobDesc = ({ number, company, status, notes }) => {
   };
   return (
     <div>
-      <h1>Single Job Page</h1>
-
-      <div>
-        <div>
+      <Container>
+        <Job>
           <h1>{job.company}</h1>
-          <h3>{job.status}</h3>
-          <h3>{job.number}</h3>
-          <h3>{job.id}</h3>
-          <p>{job.notes}</p>
+          <JobItem>
+            <h3>Job Status: </h3>
+            <p> {job.status} </p>
+          </JobItem>
+          <JobItem>
+            <h3>Job Number: </h3>
+            <p>{job.number}</p>
+          </JobItem>
+          <JobItem>
+            <h3>Job Id:</h3>
+            <p>{job._id}</p>
+          </JobItem>
+          <JobItem>
+            <h3>Notes:</h3>
+            <p>{job.notes}</p>
+          </JobItem>
 
           <span>
-            <button onClick={handleJobDelete}>Delete</button>
+            <Button onClick={handleJobDelete}>
+              <AiFillDelete />
+            </Button>
           </span>
           <span>
-            <button onClick={handleJobUpdate}>Update</button>
+            <Button onClick={handleJobUpdate}>
+              <CiEdit />
+            </Button>
           </span>
           <span>
             <button onClick={handleJobReturn}>Back to Jobs</button>
           </span>
-        </div>
-      </div>
+        </Job>
+      </Container>
     </div>
   );
 };

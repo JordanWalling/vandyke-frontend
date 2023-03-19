@@ -1,28 +1,22 @@
 import styled from "styled-components";
 
 export const Ul = styled.ul`
-  @media screen and (max-width: 588px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: auto;
-  }
-
-  @media screen and (min-width: 589px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-around;
   list-style-type: none;
-  justify-content: space-between;
-  background-color: #f8f3ee;
 `;
 export const Li = styled.li`
+  display: flex;
   background-color: white;
+  width: 90%;
+  margin: auto;
+  align-items: center;
   max-width: 20rem;
-  padding: 2rem;
+  padding: 1rem;
   border: 1px solid grey;
+  align-items: center;
   border-radius: 1rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   :hover {
