@@ -14,7 +14,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   justify-content: space-around;
-  padding: 3rem;
+  padding: 1rem;
   @media screen and (max-width: 430px) {
     display: flex;
     flex-direction: column;

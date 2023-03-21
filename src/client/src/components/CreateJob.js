@@ -1,6 +1,17 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  Background,
+  FormDetails,
+  Form,
+  Label,
+  Input,
+  Textarea,
+  Title,
+  Button,
+  Select,
+} from "../components/CreateJobStyling";
 
 const CreateJob = () => {
   // state to create jobs
@@ -34,56 +45,66 @@ const CreateJob = () => {
   };
 
   return (
-    <div>
-      <form className="form" onSubmit={handleJobSubmit}>
-        <h2>Create a New Job</h2>
-        <div>
-          <label>Job Number:</label>
-          <input
-            type="number"
-            value={number}
-            placeholder="Enter Job Number"
-            onChange={(e) => setNumber(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Company:</label>
-          <textarea
-            type="text"
-            value={company}
-            placeholder="Add Company Name"
-            onChange={(e) => setCompany(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Notes:</label>
-          <textarea
-            type="text"
-            value={notes}
-            placeholder="Add any note or N/A"
-            onChange={(e) => setNotes(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="status">Job Status</label>
-          <select
-            type="string"
-            value={status}
-            defaultValue={"default"}
-            onChange={(e) => setStatus(e.target.value)}
-            name="status"
-          >
-            <option value={"default"}>Choose an option</option>
-            <option value={"created"}>Job Created</option>
-            <option value={"progress"}>job in progress</option>
-            <option value={"completed"}>job completed</option>
-            <option value={"sent"}>job sent</option>
-          </select>
-        </div>
+    <Background>
+      <Form className="form" onSubmit={handleJobSubmit}>
+        <Title>Create a New Job</Title>
+        <FormDetails>
+          <div>
+            <Label>Job Number:</Label>
+          </div>
+          <div>
+            <Input
+              type="number"
+              value={number}
+              placeholder="Enter Job Number"
+              onChange={(e) => setNumber(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Company:</Label>
+          </div>
+          <div>
+            <Input
+              type="text"
+              value={company}
+              placeholder="Add Company Name"
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label>Notes:</Label>
+          </div>
+          <div>
+            <Textarea
+              type="text"
+              value={notes}
+              placeholder="Add any note or N/A"
+              onChange={(e) => setNotes(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label htmlFor="status">Job Status:</Label>
+          </div>
+          <div>
+            <Select
+              type="string"
+              value={status}
+              defaultValue={"default"}
+              onChange={(e) => setStatus(e.target.value)}
+              name="status"
+            >
+              <option value={"default"}>Choose an option</option>
+              <option value={"created"}>Job Created</option>
+              <option value={"progress"}>job in progress</option>
+              <option value={"completed"}>job completed</option>
+              <option value={"sent"}>job sent</option>
+            </Select>
+          </div>
 
-        <button onClick={handleJobSubmit}>Submit</button>
-      </form>
-    </div>
+          <Button onClick={handleJobSubmit}>Submit</Button>
+        </FormDetails>
+      </Form>
+    </Background>
   );
 };
 
