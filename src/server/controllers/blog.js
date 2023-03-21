@@ -55,8 +55,11 @@ const getBlogs = async (req, res) => {
 
 // GET SINGLE BLOG
 const getSingleBlog = async (req, res) => {
+  const {
+    params: { id: blogId },
+  } = req;
   try {
-    const blog = await Blog.findById(req.params._id);
+    const blog = await Blog.findOne({ _id: blogId });
     res.json(blog);
   } catch (err) {
     console.log(err);

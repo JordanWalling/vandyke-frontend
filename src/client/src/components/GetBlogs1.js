@@ -9,7 +9,7 @@ const GetBlogs1 = ({ blogs }) => {
       </div>
       <div>
         {blogs.map((blog) => {
-          return <SingleBlog key={blog.id} {...blog} />;
+          return <SingleBlog key={blog.id} {...blog} blog={blog} />;
         })}
       </div>
     </main>

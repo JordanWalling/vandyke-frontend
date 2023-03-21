@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const ContactContainer = styled.div`
-  height: 100vh;
+  height: 140vh;
+  background-color: #056ed7fa;
+  position: relative;
 `;
 export const Container = styled.div`
   /* padding-top: 5rem; */
@@ -9,20 +11,24 @@ export const Container = styled.div`
   flex-direction: column;
   align-content: center;
   justify-items: center;
-  border: 2px solid grey;
-  width: 80vw;
+
+  width: 60vw;
   position: absolute;
-  height: 100vh;
-  margin-left: 10%;
-  border-radius: 5px;
-  box-shadow: 1px 2px 3px solid grey;
+  /* height: 80vh; */
+  left: 20%;
+  top: 25%;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px solid #fff;
   max-width: 872px;
+  background-color: #fff;
 `;
 
 export const ContainerItem = styled.div`
   Iframe {
     width: 100%;
-    height: 35vh;
+    height: 25vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 `;
 
@@ -39,6 +45,7 @@ export const ContactUsForm = styled.form`
   justify-content: center;
   width: 100%;
   padding: 20px 5px;
+  border-radius: 10px;
 `;
 
 export const FormItem = styled.div`

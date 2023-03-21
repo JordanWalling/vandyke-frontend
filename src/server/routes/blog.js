@@ -19,6 +19,6 @@ router.post(
 );
 
 router.get("/all-blogs", getBlogs);
-router.get("/blog/:_id", getSingleBlog);
+router.get("/blog/:id", getSingleBlog);
 
 module.exports = router;

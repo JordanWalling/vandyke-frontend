@@ -1,22 +1,40 @@
-import SingleBlogStyling from "react";
-import { Article, Card, Content, Title } from "../components/SingleBlogStyling";
+import { Link } from "react-router-dom";
+import Timestamp from "react-timestamp";
+import {
+  Container,
+  Card,
+  Box,
+  BlogDesc,
+  Title,
+} from "../components/SingleBlogStyling";
 
-const SingleBlog = ({ id, image, content, title, createdAt }) => {
+const SingleBlog = ({ blog }) => {
+  const { image, title, content, createdAt, _id } = blog;
   return (
     <>
-      <Article>
+      <Container>
         <Card>
-          <img src={image.url} alt={title} />
-
-          <Content>
-            <div>
-              <Title>{title}</Title>
-              <p>{content}</p>
-              <p>{createdAt}</p>
-            </div>
-          </Content>
+          <Box key={_id}>
+            <img src={image.url} alt={title} />
+            <BlogDesc>
+              <div>
+                <Title>{title}</Title>
+              </div>
+              <div>
+                <p>{content}</p>
+              </div>
+              <div>
+                <p>
+                  <Timestamp date={createdAt} />
+                </p>
+              </div>
+              <button>
+                <Link to={`/blog/${_id}`}>Blog Information</Link>
+              </button>
+            </BlogDesc>
+          </Box>
         </Card>
-      </Article>
+      </Container>
     </>
   );
 };

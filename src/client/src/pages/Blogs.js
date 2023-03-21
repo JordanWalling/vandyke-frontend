@@ -1,15 +1,7 @@
-// import GetBlogs from "../components/GetBlogs";
-
-// const Blogs = () => {
-//   return (
-//     <div>
-//       <GetBlogs />
-//     </div>
-//   );
-// };
 import axios from "axios";
 import { useEffect, useState } from "react";
 import GetBlogs1 from "../components/GetBlogs1";
+import SingleBlog from "./SingleBlog";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Blogs = () => {
@@ -31,7 +23,14 @@ const Blogs = () => {
 
   return (
     <div>
-      <GetBlogs1 blogs={blogs} />
+      <ul>
+        {/* <h1>Jobs</h1> */}
+        {blogs.map((blog) => (
+          <li>
+            <SingleBlog blog={blog} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

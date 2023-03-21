@@ -20,6 +20,7 @@ import SingleEmailDesc from "./components/emails/SingleEmailDesc";
 import SingleEmail from "./components/emails/SingleEmail";
 import CreateJob from "./components/CreateJob";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
+import SingleBlogDesc from "./pages/SingleBlogDesc";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="blogs1" element={<GetBlogs1 />} />
-          <Route path="blogs/:blogId" element={<SingleBlog />} />
+          <Route path="blog/:id" element={<SingleBlogDesc />} />
           {/* <Route path="jobs" element={<GetAllJobs />} /> */}
           <Route path="dashboard" element={<DashboardLayout />}>
             <Route path="all-jobs" element={<GetAllJobs />} />
