@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #e3edf7;
-  padding-top: 5rem;
+  background-color: #056ed7fa;
+  padding-top: 1rem;
 `;
 
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
   max-width: 600px;
   margin: auto;
+  border-radius: 1rem;
 `;
 export const Box = styled.div`
   width: 90%;
@@ -18,6 +19,8 @@ export const Box = styled.div`
   background-color: #fff;
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
   img {
     width: 100%;
     height: 15rem;
@@ -42,6 +45,7 @@ export const BlogDesc = styled.div`
     overflow: hidden;
     max-width: 75ch;
     font-size: 1.5rem;
+    letter-spacing: 0.15rem;
   }
 `;
 export const Title = styled.h4`

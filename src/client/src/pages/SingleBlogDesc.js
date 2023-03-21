@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import Timestamp from "react-timestamp";
+import {
+  Background,
+  Box,
+  Card,
+  Content,
+  Title,
+  Paragraph,
+} from "../components/SingleBlogDescStyling";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -28,16 +37,31 @@ const SingleBlogDesc = ({ image, content, title, createdAt }) => {
     navigate("/blogs");
   };
   return (
-    <div key={blog._id}>
-      <h1>{blog.title}</h1>
-      <img src={blog?.image?.url} alt={title} />
-      <p>{blog.content}</p>
-      <p>{blog.createdAt}</p>
-      <p> </p>
-      <span>
-        <button onClick={handleBlogReturn}>Return to Blogs</button>
-      </span>
-    </div>
+    <Background>
+      <Card>
+        <Box>
+          <div>
+            <img src={blog?.image?.url} alt={title} />
+          </div>
+          <Content>
+            <Title key={blog._id}>{blog.title}</Title>
+            <div>
+              <Paragraph>{blog.content}</Paragraph>
+            </div>
+            <div>
+              <p>
+                <Timestamp date={blog.createdAt} />
+              </p>
+            </div>
+            <div>
+              <span>
+                <button onClick={handleBlogReturn}>Return to Blogs</button>
+              </span>
+            </div>
+          </Content>
+        </Box>
+      </Card>
+    </Background>
   );
 };
 
