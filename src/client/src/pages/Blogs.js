@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import GetBlogs1 from "../components/GetBlogs1";
 import SingleBlog from "./SingleBlog";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -27,7 +28,7 @@ const Blogs = () => {
         {/* <h1>Jobs</h1> */}
         {blogs.map((blog) => (
           <li>
-            <SingleBlog blog={blog} />
+            <SingleBlog key={blog.id} blog={blog} />
           </li>
         ))}
       </ul>

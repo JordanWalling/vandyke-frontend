@@ -28,19 +28,15 @@ const SingleBlogDesc = ({ image, content, title, createdAt }) => {
     navigate("/blogs");
   };
   return (
-    <div>
-      {/* <Container> */}
-      {/* <Card> */}
+    <div key={blog._id}>
       <h1>{blog.title}</h1>
-      <img src={blog.image.url} alt={title} />
+      <img src={blog?.image?.url} alt={title} />
       <p>{blog.content}</p>
       <p>{blog.createdAt}</p>
-
+      <p> </p>
       <span>
         <button onClick={handleBlogReturn}>Return to Blogs</button>
       </span>
-      {/* </Card> */}
-      {/*  </Container> */}
     </div>
   );
 };

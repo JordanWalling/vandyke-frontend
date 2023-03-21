@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Timestamp from "react-timestamp";
 import {
   Container,
@@ -9,13 +9,13 @@ import {
 } from "../components/SingleBlogStyling";
 
 const SingleBlog = ({ blog }) => {
-  const { image, title, content, createdAt, _id } = blog;
+  const { image, content, title, _id, createdAt } = blog;
   return (
     <>
       <Container>
         <Card>
           <Box key={_id}>
-            <img src={image.url} alt={title} />
+            <img src={image?.url} alt={title} />
             <BlogDesc>
               <div>
                 <Title>{title}</Title>

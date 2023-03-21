@@ -56,10 +56,10 @@ const getBlogs = async (req, res) => {
 // GET SINGLE BLOG
 const getSingleBlog = async (req, res) => {
   const {
-    params: { id: blogId },
+    params: { _id },
   } = req;
   try {
-    const blog = await Blog.findOne({ _id: blogId });
+    const blog = await Blog.findById({ _id });
     res.json(blog);
   } catch (err) {
     console.log(err);
