@@ -1,6 +1,15 @@
-import styled from "styled-components";
-import classes from "./CreateBlog.module.css";
-import { Wrapper, Label, Title, Input } from "./FormStyling";
+import "./CreateBlog.module.css";
+import {
+  Background,
+  Form,
+  FormDetails,
+  Label,
+  Input,
+  Title,
+  Button,
+  Textarea,
+  ImageButton,
+} from "../CreateJobStyling";
 import axios from "axios";
 import { useState } from "react";
 const CreateBlog = () => {
@@ -48,35 +57,44 @@ const CreateBlog = () => {
     }
   };
   return (
-    <Wrapper>
-      <form className={classes.Form} onSubmit={handleSubmit}>
+    <Background>
+      <Form onSubmit={handleSubmit}>
         <Title>Create a new blog</Title>
-        <div>
-          <Label>Title:</Label>
-          <Input
-            type="text"
-            value={title}
-            placeholder="Enter a Title"
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-        <div>
-          <Label>
-            <Input type="file" accept="images/*" onChange={handleImage} />
-          </Label>
-        </div>
-        <div>
-          <Label>Content:</Label>
-          <textarea
-            type="text"
-            value={content}
-            placeholder="Add Content here"
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </div>
-        <button onClick={handleSubmit}>Submit</button>
-      </form>
-    </Wrapper>
+        <FormDetails>
+          <div>
+            <Label>Title:</Label>
+            <Input
+              type="text"
+              value={title}
+              placeholder="Enter a Title"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label className={"upload-file"}>
+              <ImageButton>Upload an image</ImageButton>
+              <Input
+                id="upload-file"
+                type="file"
+                accept="images/*"
+                onChange={handleImage}
+              />
+            </Label>
+          </div>
+
+          <div>
+            <Label>Content:</Label>
+            <Textarea
+              type="text"
+              value={content}
+              placeholder="Add Content here"
+              onChange={(e) => setContent(e.target.value)}
+            />
+          </div>
+          <Button onClick={handleSubmit}>Submit</Button>
+        </FormDetails>
+      </Form>
+    </Background>
   );
 };
 

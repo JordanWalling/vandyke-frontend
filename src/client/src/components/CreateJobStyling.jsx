@@ -33,11 +33,14 @@ export const Input = styled.input`
   width: 95%;
   height: 5vh;
   font-size: 2vh;
+  padding-left: 1rem;
 `;
 export const Textarea = styled.textarea`
   width: 95%;
   height: 20vh;
   font-size: 2vh;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
 `;
 
 export const Title = styled.h2`
@@ -55,8 +58,29 @@ export const Button = styled.button`
   color: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
+  :hover {
+    color: #056ed7fa;
+    background-color: #fff;
+    transition: 0.5s;
+  }
 `;
 export const Select = styled.select`
   width: 30%;
   height: 4vh;
+`;
+
+export const ImageButton = styled.button`
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #056ed7fa;
+  width: 30%;
+  margin: auto;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  :hover {
+    color: #056ed7fa;
+    background-color: #fff;
+    transition: 0.5s;
+  }
 `;

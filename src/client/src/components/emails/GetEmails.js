@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleEmail from "./SingleEmail";
 import { MainHeading } from "./SingleEmailStyles";
+import { Background } from "../SingleBlogDescStyling";
+import Wrapper from "./GetEmails";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -33,13 +35,14 @@ const GetEmails = () => {
   }, []);
 
   return (
-    <div>
+    <Background>
       <MainHeading>Emails</MainHeading>
-
-      {emails.map((email) => (
-        <SingleEmail email={email} />
-      ))}
-    </div>
+      <Wrapper>
+        {emails.map((email) => (
+          <SingleEmail email={email} />
+        ))}
+      </Wrapper>
+    </Background>
   );
 };
 
