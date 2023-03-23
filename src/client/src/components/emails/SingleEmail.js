@@ -1,28 +1,61 @@
 import { Link } from "react-router-dom";
 import {
+  EmailInfo,
   Heading,
-  HideFullMessage,
-  Container,
-  Wrapper,
-  SubSize,
+  Content,
+  Message,
+  P,
+  ButtonContainer,
+  Button,
+  Sub,
 } from "./SingleEmailStyles";
 
 const SingleEmail = ({ email }) => {
   const { name, phoneNumber, userEmail, message, _id } = email;
   return (
-    <div>
-      <Wrapper>
-        <Container>
-          <Heading>{name}</Heading>
-          <SubSize>Phone Number:</SubSize> {phoneNumber}
-          <SubSize>Email Address:</SubSize> {userEmail}
-          <HideFullMessage>message:{message}</HideFullMessage>
-          <button>
-            <Link to={`/dashboard/email/${_id}`}>Email information</Link>
-          </button>
-        </Container>
-      </Wrapper>
-    </div>
+    <>
+      <EmailInfo>
+        <Heading>
+          <h2>{name}</h2>
+        </Heading>
+        <Content>
+          <div>
+            <Sub>Phone Number:</Sub>
+          </div>
+          <div>
+            <p>{phoneNumber}</p>
+          </div>
+        </Content>
+        <Content>
+          <div>
+            <Sub>Email Address:</Sub>
+          </div>
+          <div>
+            <p>{userEmail}</p>
+          </div>
+        </Content>
+        <Message>
+          <div>
+            <Sub>Message:</Sub>
+          </div>
+          <div>
+            <P>{message}</P>
+          </div>
+        </Message>
+        <ButtonContainer>
+          <Button>
+            <Link
+              to={`/dashboard/email/${_id}`}
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              <p>Email information</p>
+            </Link>
+          </Button>
+        </ButtonContainer>
+      </EmailInfo>
+    </>
   );
 };
 

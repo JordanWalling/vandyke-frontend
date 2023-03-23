@@ -6,35 +6,63 @@ export const HideFullMessage = styled.p`
   white-space: nowrap;
   overflow: hidden;
 `;
-export const MainHeading = styled.h2`
-  font-size: 10vw;
-  display: flex;
-  justify-content: center;
-`;
-export const Heading = styled.h4`
-  font-size: 8vw;
-  font-weight: 700;
-`;
-export const SubSize = styled.h4`
-  font-size: 3vw;
-`;
-export const Container = styled.div`
-  border: 2px solid red;
-  border-radius: 1vw;
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-`;
-export const Wrapper = styled.div`
-  display: flex;
-  width: 100vw;
 
-  align-content: center;
+export const Card = styled.div`
+  background-color: #fff;
+  border: 2px solid red;
+`;
+export const EmailInfo = styled.div``;
+export const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  p {
+    font-size: 1.75rem;
+  }
+`;
+export const Message = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+`;
+export const P = styled.p`
+  width: 50px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`;
+
+export const Heading = styled.h4`
+  display: flex;
   justify-content: center;
-  height: 25vh;
-  padding-bottom: 2vh;
+  h2 {
+    font-size: 3rem;
+    color: #056ed7fa;
+    padding-bottom: 1rem;
+  }
+`;
+
+export const Sub = styled.h4`
+  font-size: 2rem;
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Button = styled.button`
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #056ed7fa;
+  p {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  :hover {
+    background-color: #fff;
+    p {
+      color: #056ed7fa;
+    }
+  }
 `;
