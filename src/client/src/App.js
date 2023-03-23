@@ -21,6 +21,9 @@ import SingleEmail from "./components/emails/SingleEmail";
 import CreateJob from "./components/CreateJob";
 import CreateBlog from "./components/CreateBlog/CreateBlog";
 import SingleBlogDesc from "./pages/SingleBlogDesc";
+import ProductPage from "./pages/ProductPage";
+import ProductPage2 from "./pages/ProductPage2";
+import ProductPage3 from "./pages/ProductPage3";
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="products/1" element={<ProductPage />} />
+          <Route path="products/2" element={<ProductPage2 />} />
+          <Route path="products/3" element={<ProductPage3 />} />
           <Route path="blogs1" element={<GetBlogs1 />} />
           <Route path="blog/:id" element={<SingleBlogDesc />} />
           {/* <Route path="jobs" element={<GetAllJobs />} /> */}

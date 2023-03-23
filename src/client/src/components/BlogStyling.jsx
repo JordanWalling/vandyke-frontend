@@ -49,7 +49,7 @@ export const BlogItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
   border: 2px solid grey;
   border-radius: 2rem;
   box-shadow: 2px 2px 2px 2px #cdcbcb;
