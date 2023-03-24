@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Background, Card, Content } from "./SingleEmailDescStyling";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -28,7 +29,7 @@ const SingleEmailDesc = ({ name, phoneNumber, userEmail, message }) => {
     try {
       const { data } = await axios.delete(`${BASE_URL}/email/${id} `);
       console.log("Email Deleted" - data);
-      navigate("/emails");
+      navigate("/dashboard/emails");
     } catch (err) {
       console.log(err);
     }
@@ -40,20 +41,24 @@ const SingleEmailDesc = ({ name, phoneNumber, userEmail, message }) => {
   };
 
   return (
-    <div>
-      <h2>id: {email.id}</h2>
-      <h2>Name: {email.name}</h2>
-      <h3>Phone Number: {email.phoneNumber}</h3>
-      <h3>Email Address: {email.userEmail}</h3>
-      <p>message: {email.message}</p>
-      <span>
-        <button onClick={handleEmailDelete}>Delete</button>
-      </span>
+    <Background>
+      <Card>
+        {/* <h2>id: {email.id}</h2> */}
+        <Content>
+          <h2>Name: {email.name}</h2>
+          <h3>Phone Number: {email.phoneNumber}</h3>
+          <h3>Email Address: {email.userEmail}</h3>
+          <p>message: {email.message}</p>
+          <span>
+            <button onClick={handleEmailDelete}>Delete</button>
+          </span>
 
-      <span>
-        <button onClick={handleEmailReturn}>Back to Emails</button>
-      </span>
-    </div>
+          <span>
+            <button onClick={handleEmailReturn}>Back to Emails</button>
+          </span>
+        </Content>
+      </Card>
+    </Background>
   );
 };
 

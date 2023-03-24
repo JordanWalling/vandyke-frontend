@@ -4,7 +4,6 @@ import {
   Heading,
   Content,
   Message,
-  P,
   ButtonContainer,
   Button,
   Sub,
@@ -39,7 +38,7 @@ const SingleEmail = ({ email }) => {
             <Sub>Message:</Sub>
           </div>
           <div>
-            <P>{message}</P>
+            <p>{message}</p>
           </div>
         </Message>
         <ButtonContainer>

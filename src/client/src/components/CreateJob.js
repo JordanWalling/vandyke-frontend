@@ -35,7 +35,7 @@ const CreateJob = () => {
       });
       console.log("Job Created =>");
       console.log(data);
-      navigate("/all-jobs");
+      navigate("/dashboard/all-jobs");
       if (data.job) {
         return new Error("Job already exists");
       }

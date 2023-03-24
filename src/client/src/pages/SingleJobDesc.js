@@ -8,6 +8,7 @@ import {
   Job,
   JobItem,
   Button,
+  Background,
 } from "../components/SingleJobDescStyling";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -51,7 +52,7 @@ const SingleJobDesc = ({ number, company, status, notes }) => {
     navigate("/dashboard/all-jobs");
   };
   return (
-    <div>
+    <Background>
       <Container>
         <Job>
           <h1>{job.company}</h1>
@@ -87,7 +88,7 @@ const SingleJobDesc = ({ number, company, status, notes }) => {
           </span>
         </Job>
       </Container>
-    </div>
+    </Background>
   );
 };
 

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const HideFullMessage = styled.p`
-  width: 50px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-`;
+// export const HideFullMessage = styled.p`
+//   width: 50px;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+//   overflow: hidden;
+// `;
 
 export const Card = styled.div`
   background-color: #fff;
@@ -16,21 +16,18 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  p {
-    font-size: 1.75rem;
-  }
 `;
 export const Message = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 `;
-export const P = styled.p`
-  width: 50px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-`;
+// export const P = styled.p`
+//   width: 50px;
+//   text-overflow: ellipsis;
+//   white-space: nowrap;
+//   overflow: hidden;
+// `;
 
 export const Heading = styled.h4`
   display: flex;
@@ -45,6 +42,7 @@ export const Heading = styled.h4`
 export const Sub = styled.h4`
   font-size: 2rem;
 `;
+
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -54,15 +52,8 @@ export const Button = styled.button`
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: #056ed7fa;
-  p {
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
   :hover {
+    color: #056ed7fa;
     background-color: #fff;
-    p {
-      color: #056ed7fa;
-    }
   }
 `;

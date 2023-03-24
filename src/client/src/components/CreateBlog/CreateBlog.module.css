@@ -1,6 +1,6 @@
-Input[type="file"] {
+/* Input[type="file"] {
   display: none;
-}
+} */
 
 .upload-file {
   border: 1px solid #ccc;

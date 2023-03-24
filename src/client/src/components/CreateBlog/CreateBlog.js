@@ -12,6 +12,8 @@ import {
 } from "../CreateJobStyling";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const CreateBlog = () => {
   // state to create blogs
   const [content, setContent] = useState("");
@@ -19,6 +21,7 @@ const CreateBlog = () => {
   const [image, setImage] = useState({});
 
   const BASE_URL = process.env.REACT_APP_BASE_URL;
+  const navigate = useNavigate();
 
   // handle image
   const handleImage = async (e) => {
@@ -51,6 +54,7 @@ const CreateBlog = () => {
         title,
         image,
       });
+      navigate("/blogs");
       console.log(data);
     } catch (err) {
       console.log(err);
@@ -71,15 +75,8 @@ const CreateBlog = () => {
             />
           </div>
           <div>
-            <Label className={"upload-file"}>
-              <ImageButton>Upload an image</ImageButton>
-              <Input
-                id="upload-file"
-                type="file"
-                accept="images/*"
-                onChange={handleImage}
-              />
-            </Label>
+            <Label>Upload an image </Label>
+            <Input type="file" accept="images/*" onChange={handleImage} />
           </div>
 
           <div>

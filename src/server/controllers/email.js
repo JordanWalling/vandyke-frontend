@@ -12,10 +12,12 @@ const getEmails = async (req, res) => {
 
 // GET A SINGLE EMAIL
 const getEmail = async (req, res) => {
-  const { params: _id } = req;
+  const {
+    params: { id: emailId },
+  } = req;
   try {
     const email = await Email.findOne({
-      id: _id,
+      _id: emailId,
     });
     if (!email) {
       return res.json({ error: "Email not found" });
@@ -60,7 +62,7 @@ const createEmail = async (req, res) => {
 const updateEmail = async (req, res) => {
   const {
     body: { name, phoneNumber, message, userEmail },
-    params: { _id },
+    params: { id: emailId },
   } = req;
 
   try {
@@ -70,7 +72,7 @@ const updateEmail = async (req, res) => {
 
     const email = await Email.findOneAndUpdate(
       {
-        _id,
+        _id: emailId,
       },
       req.body,
       { new: true }
@@ -88,11 +90,11 @@ const updateEmail = async (req, res) => {
 
 // DELETE A Email
 const deleteEmail = async (req, res) => {
-  const { _id } = req.params;
+  const { id: emailId } = req.params;
 
   try {
     const email = await Email.findByIdAndDelete({
-      _id,
+      _id: emailId,
     });
     if (!email) {
       return res.json({ error: "Email not found" });

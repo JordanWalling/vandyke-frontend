@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
 
 export const Background = styled.div`
   background-color: #056ed7fa;
+  padding: 2rem;
 `;
 export const Heading = styled.h3`
   color: #fff;
