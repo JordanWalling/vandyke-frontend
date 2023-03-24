@@ -7,11 +7,17 @@ const Container = styled.div`
   background: #fff;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 3rem;
   display: flex;
   position: sticky;
   z-index: 9;
   border-bottom: 2px solid #dedede;
+  @media screen and (min-width: 767px) {
+    height: 5rem;
+  }
+  @media screen and (min-width: 1024px) {
+    height: 6rem;
+  }
 `;
 const NavLeft = styled.div`
   flex: 2;
