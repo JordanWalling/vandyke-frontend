@@ -1,9 +1,14 @@
 .divideSection {
-  height: 28vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  @media screen and (min-width: 320px) {
+    height: 30vh;
+  }
+  @media screen and (min-width: 676px) {
+    height: 30vh;
+  }
 }
 
 .divideContainer {
@@ -16,7 +21,10 @@
   transition: all 0.5s;
 }
 .divideContainer h3 {
-  font-size: 3rem;
+  font-size: 3vw;
+  @media screen and (min-width: 320px) {
+    transform: translateY(-50%);
+  }
 }
 
 .caption {
@@ -41,4 +49,7 @@
 
 .divideContainer:hover img {
   transform: translateY(-30%);
+  @media screen and (min-width: 320px) {
+    transform: translateY(-50%);
+  }
 }

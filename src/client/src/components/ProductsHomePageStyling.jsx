@@ -7,14 +7,22 @@ export const Card = styled.div`
   background-color: #fff;
   border-radius: 2rem;
   img {
-    height: 20rem;
+    height: 15rem;
   }
   button {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
   :hover {
     transform: scale(1.05);
     transition: 0.5s;
+  }
+  @media screen and (min-width: 400px) {
+    img {
+      height: 20rem;
+    }
+    button {
+      padding: 1rem;
+    }
   }
 `;
 
@@ -41,11 +49,19 @@ export const Button = styled.button`
 `;
 export const Heading = styled.h3`
   text-align: center;
-  font-size: 5rem;
+  font-size: 3.5rem;
   background-color: #056ed7fa;
   margin: auto;
   padding-top: 2rem;
   color: #fff;
+  @media screen and (min-width: 767px) {
+    font-size: 5rem;
+    padding-top: 2.5rem;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 6rem;
+    padding-top: 2.5rem;
+  }
 `;
 export const Content = styled.div`
   text-align: center;
@@ -55,12 +71,12 @@ export const Content = styled.div`
   gap: 2rem;
   margin: auto;
   h4 {
-    padding-top: 2rem;
-    font-size: 2rem;
+    padding-top: 1rem;
+    font-size: 1.75rem;
     color: #056ed7fa;
   }
   p {
     letter-spacing: 0.15rem;
-    line-height: 1.25;
+    line-height: 1.2;
   }
 `;
